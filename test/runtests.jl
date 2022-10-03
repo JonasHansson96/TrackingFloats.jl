@@ -1,5 +1,6 @@
 using TrackingFloats
 using Test
+using LinearAlgebra
 
 @testset "TrackingFloats.jl" begin
     # Write your tests here.
@@ -23,9 +24,7 @@ using Test
     vt = At*bt
     # Did we calculate correctly? Using value to convert back to float
     @test maximum(abs, v - value.(vt)) < sqrt(eps())
-
-    using LinearAlgebra
-
+    
     # Is promotion working?
     @test TrackingFloat(1.0, 0) + 2.0 == TrackingFloat(3, 2)
 
