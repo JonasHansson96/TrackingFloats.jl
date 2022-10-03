@@ -1,8 +1,7 @@
 module TrackingFloats
-
-using LinearAlgebra
 import Base: +,-,*,/, promote_rule,<,sqrt
 
+export +,-,*,/,promote_rule,<,sqrt,value,getmax
 """
 TrackingFloat
 # Fields:
