@@ -11,6 +11,7 @@ using LinearAlgebra
     @test v - v == TrackingFloat(0, 4)
     @test v/TrackingFloat(0.1, 0) == TrackingFloat(40, 10)
     @test -v == TrackingFloat(-4,3)
+    @test value(v) == 4.
     # Try working with matrices
     A = randn(5,5)
     b = randn(5)
@@ -24,7 +25,7 @@ using LinearAlgebra
     vt = At*bt
     # Did we calculate correctly? Using value to convert back to float
     @test maximum(abs, v - value.(vt)) < sqrt(eps())
-    
+
     # Is promotion working?
     @test TrackingFloat(1.0, 0) + 2.0 == TrackingFloat(3, 2)
 
