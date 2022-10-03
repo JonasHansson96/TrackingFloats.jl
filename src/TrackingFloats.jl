@@ -2,7 +2,8 @@ module TrackingFloats
 import Base: +,-,*,/, promote_rule,<,sqrt
 
 export +,-,*,/,promote_rule,<,sqrt, #reexport from Base
-    value,getmax
+    value,getmax,
+    TrackingFloat
 """
 TrackingFloat
 # Fields:
